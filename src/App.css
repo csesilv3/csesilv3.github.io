@@ -1,0 +1,199 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  background-color: #f7f9fc;
+  color: #333;
+  /* 화면 가로/세로 완벽 중앙 정렬 */
+  display: flex;
+  justify-content: center; 
+  align-items: center;     
+  min-height: 100vh;       
+  margin: 0;
+}
+
+/* 최상위 래퍼 추가 정렬 */
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.container {
+  text-align: center;
+  width: 100%;
+  max-width: 1000px; /* 전체 영역 넓힘 (기존 800px) */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  font-size: 3.5rem; /* 제목 글자 크기 대폭 확대 */
+  margin-bottom: 20px;
+  color: #ff6b6b;
+  word-break: keep-all;
+}
+
+h2 {
+  font-size: 2.8rem; /* 라운드(결승전, 32강) 글자 크기 확대 */
+  margin-bottom: 40px;
+}
+
+p {
+  font-size: 1.5rem; /* 설명 텍스트 크기 확대 */
+  margin-bottom: 20px;
+}
+
+.step {
+  font-size: 1.8rem;
+  color: #777;
+}
+
+.btn {
+  background-color: #ff6b6b;
+  color: white;
+  border: none;
+  padding: 20px 50px; /* 버튼 크기 확대 */
+  font-size: 1.8rem; /* 버튼 글자 크기 확대 */
+  border-radius: 50px;
+  cursor: pointer;
+  margin-top: 30px;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.btn:hover {
+  background-color: #ff5252;
+  transform: scale(1.05);
+}
+
+/* 대결 화면 레이아웃 */
+.vs-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px; /* 카드와 VS 글자 사이 간격 넓힘 */
+  width: 100%;
+}
+
+.vs-text {
+  font-size: 4rem; /* VS 글자 크기 엄청 큼지막하게 */
+  font-weight: bold;
+  color: #ccc;
+}
+
+/* 음식 카드 */
+.food-card {
+  width: 400px; /* 카드 크기 고정으로 키움 */
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.food-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.food-card img {
+  width: 100%;
+  height: 400px; /* 사진 크기 큼지막하게 확대 */
+  object-fit: cover;
+}
+
+.food-card h3 {
+  padding: 30px;
+  font-size: 2.2rem; /* 음식 이름 글자 크기 확대 */
+  background-color: #fff;
+  margin: 0;
+}
+
+/* 결과 화면 */
+.winner-card {
+  display: inline-block;
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(255, 107, 107, 0.3);
+  margin-bottom: 30px;
+}
+
+.winner-card img {
+  width: 450px; /* 우승자 사진 더 크게! */
+  height: 450px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.winner-card h2 {
+  margin-top: 25px;
+  margin-bottom: 0;
+  color: #ff6b6b;
+  font-size: 2.5rem; /* 우승 음식 이름 확대 */
+}
+
+.runner-up {
+  font-size: 1.8rem;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+/* 결과 창 전체 순위 스타일링 */
+.ranking-section {
+  margin-top: 60px;
+  width: 100%;
+  max-width: 600px;
+}
+
+.ranking-section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  color: #444;
+}
+
+.ranking-list {
+  background: white;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  max-height: 400px; /* 리스트가 길어지면 스크롤 생성 */
+  overflow-y: auto;
+}
+
+.ranking-item {
+  display: flex;
+  justify-content: space-between; /* 양끝 정렬 */
+  align-items: center;
+  padding: 15px 20px;
+  border-bottom: 1px solid #eee;
+  font-size: 1.6rem;
+}
+
+.ranking-item:last-child {
+  border-bottom: none; /* 마지막 줄은 밑줄 제거 */
+}
+
+.rank-badge {
+  font-weight: bold;
+  color: #ff6b6b;
+  width: 120px;
+  text-align: left;
+}
+
+.rank-name {
+  font-weight: 500;
+  color: #333;
+  flex: 1;
+  text-align: right;
+}
